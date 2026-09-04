@@ -47,10 +47,10 @@ My Command Line Shell is: PowerShell
 ```
 Typed "blah blah blah blah"
 ```
-10. Make a copy of `test.txt` named `copy.txt` in `DirA`:
-11. View the contents of `DirA`: 
-12. Make a copy of `test.txt` in `Dir B` named `fodder.txt`:
-13. Delete / remove both `fodder.txt` AND `Dir B`:
+10. Make a copy of `test.txt` named `copy.txt` in `DirA`: Copy-Item .\text.txt "copy.txt"
+11. View the contents of `DirA`: ls
+12. Make a copy of `test.txt` in `Dir B` named `fodder.txt`: Copy-Item .\text.txt "fodder.txt", then Move-Item .\fodder.txt  "C:\Users\YOUR USERNAME\Dir B\"
+13. Delete / remove both `fodder.txt` AND `Dir B`: rm ".\Dir B\" - r
 
 ## Citations
 
