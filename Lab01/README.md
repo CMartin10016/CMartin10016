@@ -39,7 +39,7 @@ My Command Line Shell is: PowerShell
 2. Create a directory named `DirA`: mkdir "DirA"
 3. Create a directory named `Dir B`: mkdir "Dir B"
 4. Go into `DirA`: cd "DirA"
-5. Go into `Dir B` from `DirA`: cd "C:\Users\YOUR USERNAME\Dir B\"
+5. Go into `Dir B` from `DirA`: cd "C:\Users\<USERNAME>\Dir B\"
 6. Return to your user's home directory: cd ~
 7. Create a file named `test.txt`: New-Item "text.txt"
 8. Move the file named `test.txt` into `DirA`: Move-Item .\text.txt .\DirA\ 
@@ -49,7 +49,7 @@ Typed "blah blah blah blah"
 ```
 10. Make a copy of `test.txt` named `copy.txt` in `DirA`: Copy-Item .\text.txt "copy.txt"
 11. View the contents of `DirA`: ls
-12. Make a copy of `test.txt` in `Dir B` named `fodder.txt`: Copy-Item .\text.txt "fodder.txt", then Move-Item .\fodder.txt  "C:\Users\YOUR USERNAME\Dir B\"
+12. Make a copy of `test.txt` in `Dir B` named `fodder.txt`: Copy-Item .\text.txt "fodder.txt", then Move-Item .\fodder.txt  "C:\Users\<USERNAME>\Dir B\"
 13. Delete / remove both `fodder.txt` AND `Dir B`: rm ".\Dir B\" - r
 
 ## Citations
