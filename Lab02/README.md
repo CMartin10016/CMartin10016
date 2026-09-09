@@ -34,8 +34,8 @@ ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
 
 ## Part 3 Answers
 
-1. Command to create new user: 
-2. Path to new user's home directory: 
+1. Command to create new user: sudo adduser cmartin
+2. Path to new user's home directory: /home/cmartin
 3. Evaluate if ubuntu can add files to new user's home directory WITHOUT SUDO:
 4. Command to switch to new user:
 5. Command(s) to go to new user's home directory:
