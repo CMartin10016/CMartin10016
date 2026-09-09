@@ -36,16 +36,16 @@ ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
 
 1. Command to create new user: sudo adduser cmartin
 2. Path to new user's home directory: /home/cmartin
-3. Evaluate if ubuntu can add files to new user's home directory WITHOUT SUDO:
-4. Command to switch to new user:
-5. Command(s) to go to new user's home directory:
-6. Evaluate if new user can add files to user's home directory:
-7. Command to return to `ubuntu` user:
-8. Command to return to `ubuntu` home directory: 
+3. Evaluate if ubuntu can add files to new user's home directory WITHOUT SUDO: "cd home/cmartin" does not allow entry, so the home directory cannot be accessed
+4. Command to switch to new user: su cmartin
+5. Command(s) to go to new user's home directory: cd ~
+6. Evaluate if new user can add files to user's home directory: "touch test.txt" runs successfully and "ls" shows the new file
+7. Command to return to `ubuntu` user: exit
+8. Command to return to `ubuntu` home directory: cd ~
 
 ## Part 4 Answers
 
-1. Command(s) to create group named `squad` and add members:
+1. Command(s) to create group named `squad` and add members: "sudo addgroup squad
 2. Command(s) to add `ubuntu` & user to group `squad`:
 3. Command(s) to allow `squad` to view the `ubuntu` user's home directory contents:
 4. Command(s) to modify `share` to have group ownership of `squad`:
