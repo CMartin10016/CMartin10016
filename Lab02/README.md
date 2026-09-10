@@ -80,9 +80,11 @@ Contents inside of `share`
 
 ## Part 6 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
-
 ## Citations
 
-To add citations, provide the site and a summary of what it assisted you with.  If generative AI was used, include which generative AI system was used and what prompt(s) you fed it.
+SSH: https://www.ssh.com/academy/ssh/protocol
+    
+Permissions: https://raidermailwright-my.sharepoint.com/:p:/g/personal/kayleigh_duncan_wright_edu/Eevic4RiqfZLmCbWC0YeiaIBpj1IaTRemb1maDKI8nlJuw?e=rWvAZa    
+
+User Management: https://www.geeksforgeeks.org/linux-unix/user-management-in-linux/
 
