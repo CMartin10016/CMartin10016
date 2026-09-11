@@ -45,38 +45,38 @@ ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
 
 ## Part 4 Answers
 
-1. Command(s) to create group named `squad` and add members: "sudo addgroup squad
-2. Command(s) to add `ubuntu` & user to group `squad`:
-3. Command(s) to allow `squad` to view the `ubuntu` user's home directory contents:
-4. Command(s) to modify `share` to have group ownership of `squad`:
-5. Describe your tests and commands with the user account:
-6. Describe the full set of permissions / settings that enable the user to make edits:
+1. Command(s) to create group named `squad` and add members: "sudo addgroup squad"
+2. Command(s) to add `ubuntu` & user to group `squad`: "sudo usermod -a -G squad ubuntu" & "sudo usermod -a -G squad cmartin"
+3. Command(s) to allow `squad` to view the `ubuntu` user's home directory contents: "sudo chgrp squad ubuntu/" & "chmod g+r ubuntu/"
+4. Command(s) to modify `share` to have group ownership of `squad`: sudo chown -R ubuntu:squad share
+5. Describe your tests and commands with the user account: 
+6. Describe the full set of permissions / settings that enable the user to make edits: The squad group is associated with ubuntu/, can read in ubuntu/, and has ownership over share and all of its contents.
 
 ## Part 5 Answers
 
 For each, write the command used or answer the question posed.
 
-1. Command(s) to make file using `sudo`: 
-2. Command(s) to make file with `root`:
-3. Describe / compare ownership and permissions of files:
+1. Command(s) to make file using `sudo`: sudo touch "madewithsudo.txt"
+2. Command(s) to make file with `root`: "sudo su -" then navigate to ubuntu/ and "touch 'madewithroot.txt'"
+3. Describe / compare ownership and permissions of files: madewithsudo is owned by ubuntu despite using root privileges, while madewithroot is owned by the root user.
 4. Which account can do what actions? (Type Y or N in columns)
 
 Contents inside of `share`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
-| `root`    |           |           |                           |
-| `ubuntu`  |           |           |                           |
-| `BOB`     |           |           |                           |
+| `root`    |  Y         |    Y       |      Y                     |
+| `ubuntu`  |  Y         |    Y       |       Y                    |
+| `BOB`     |   Y        |    N       |       N                    |
 
 `madewithsudo.txt`
 | Account   | Can View  | Can Edit  | Can Change Permissions    |
 | ---       | ---       | ---       | ---                       |
-| `root`    |           |           |                           |
-| `ubuntu`  |           |           |                           |
-| `BOB`     |           |           |                           |
+| `root`    | Y          |   Y        |     Y                      |
+| `ubuntu`  | Y          |    N       |     N                      |
+| `BOB`     | Y          |    N       |     N                      |
 
-5. Command(s) to modify permissions:
-6. How to give user account `sudo`:
+5. Command(s) to modify permissions: "sudo chgrp squad madewithsudo.txt" & "chmod g+rw 'madewithsudo.txt'"
+6. How to give user account `sudo`: sudo usermod -a -G sudo cmartin
 
 ## Part 6 - Citations / Resources
 
@@ -88,3 +88,4 @@ Permissions: https://raidermailwright-my.sharepoint.com/:p:/g/personal/kayleigh_
 
 User Management: https://www.geeksforgeeks.org/linux-unix/user-management-in-linux/
 
+Group Management: https://askubuntu.com/questions/488485/allowing-a-group-read-write-access-to-a-directory
