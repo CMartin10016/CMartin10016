@@ -83,9 +83,16 @@ Contents inside of `share`
 ## Citations
 
 SSH: https://www.ssh.com/academy/ssh/protocol
+    Explained the purpose and function of ssh.
     
-Permissions: https://raidermailwright-my.sharepoint.com/:p:/g/personal/kayleigh_duncan_wright_edu/Eevic4RiqfZLmCbWC0YeiaIBpj1IaTRemb1maDKI8nlJuw?e=rWvAZa    
+Permissions: https://raidermailwright-my.sharepoint.com/:p:/g/personal/kayleigh_duncan_wright_edu/Eevic4RiqfZLmCbWC0YeiaIBpj1IaTRemb1maDKI8nlJuw?e=rWvAZa
+    Course material explained how to use permissions and how to change them with specific command examples on how to use chmod.
 
 User Management: https://www.geeksforgeeks.org/linux-unix/user-management-in-linux/
+    Explained how to manipulate users by creating them and changing their permissions.
 
 Group Management: https://askubuntu.com/questions/488485/allowing-a-group-read-write-access-to-a-directory
+    Help thread explaining how to allow a group access to a directory like ubuntu/.
+
+Sudo/Root Usage: https://www.linux.org/threads/difference-between-sudo-and-root-user.58559/
+    Explains the difference between using sudo and being the root user, and how files created while root user will be owned by root.
