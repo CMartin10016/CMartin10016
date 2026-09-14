@@ -9,12 +9,12 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab03/Inst
 
 | git command         | Description |
 | ---                 | ---         | 
-| `git clone repo_URI`|             |
-| `git status`        |             |
-| `git add filename`  |             |
-| `git commit`        |             |
-| `git push`          |             |
-| `git pull`          |             |
+| `git clone repo_URI`| copies repo to current machine            |
+| `git status`        | shows current status of repo and if changes exist to be committed/pushed            |
+| `git add filename`  | stages file to be committed            |
+| `git commit`        | saves changes to local repo            |
+| `git push`          | uploads changes to remote repo            |
+| `git pull`          | gets files from remote repo            |
 
 ## Part 2 - clone
 
