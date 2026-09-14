@@ -1,6 +1,6 @@
 ## Lab 03
 
-- Name: Connor MArtin
+- Name: Connor Martin
 - Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab03/Instructions.html
