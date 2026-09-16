@@ -18,15 +18,15 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab03/Inst
 
 ## Part 2 - clone
 
-1. Command to generate an SSH key with ed25519:
-2. Command(s) to read & copy text of the *public* key:
-3. Summary of steps to place *public* key in user profile: 
-4. Command to *clone* your `ceg2350s25-YOURGITHUBUSERNAME` with SSH for authentication: 
+1. Command to generate an SSH key with ed25519: ssh-keygen -t ed25519 -C "martin782@wright.edu"
+2. Command(s) to read & copy text of the *public* key: "cd .ssh", then "cat 'id_ed25519.pub'", ctrl-c what gets printed to console
+3. Summary of steps to place *public* key in user profile: Go to settings, then SSH and GPG keys, and add new key, pasting the public key text and giving it a name.
+4. Command to *clone* your `ceg2350s25-YOURGITHUBUSERNAME` with SSH for authentication: git clone git@github.com:CMartin10016/CMartin10016.githttps://github.com/CMartin10016/CMartin10016
 
 ## Part 3 - IO Redirection
 
 1. `printenv HOME > thishouse`
-   - Explanation: 
+   - Explanation: Displays the value of the HOME variable, then redirects this output into thishouse in the current directory, creating it if it does not already exist.
 2. `cat doesnotexist 2>> hush.txt`
    - Explanation: 
 3. `cat nums.txt | sort -n >> all_nums.txt`
