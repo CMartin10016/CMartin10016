@@ -28,15 +28,15 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab03/Inst
 1. `printenv HOME > thishouse`
    - Explanation: Displays the value of the HOME variable, then redirects this output into thishouse in the current directory, creating it if it does not already exist.
 2. `cat doesnotexist 2>> hush.txt`
-   - Explanation: 
+   - Explanation: Tries to read from file doesnotexist, then appends the resulting error message to hush.txt
 3. `cat nums.txt | sort -n >> all_nums.txt`
-   - Explanation: 
+   - Explanation: Displays the contents of nums.txt, then sorts that result numerically and appends the sorted contents to all_nums.txt
 4. `cat << "DONE" > here.txt`
    - Explanation: 
 5. `ls -lt ~ | head`
-   - Explanation: 
+   - Explanation: Shows all items in the current directory in long form sorted by time last edited, then filter those down to only displaying the first ten items, so the last ten items that were modified.
 6. `history | grep ".md"`
-   - Explanation: 
+   - Explanation: Looks for the history of previous commands, then shows commands that contain ".md" in them.
 
 ## Part 4 - Rolling the Dice
 
@@ -45,7 +45,7 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 ## Part 5 - Retrospective Answers
 
 1. Where and when did it go wrong while working on your script tasks?
-> Your reflection here
+> When starting on step 2, the shebang was wrong, which caused about half an hour of testing because the error messages were misleading.
 2. Was anything familiar working with a new language compared to one you are used to?
 > Your reflection here
 3. Did you write good `commit` messages that refer to what tasks were completed at each commit?  What would you improve?
