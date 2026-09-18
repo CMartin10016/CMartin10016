@@ -53,10 +53,17 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 
 ## Part 6 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
-
-## Extra Credit
-
-1. Note here *what* you did to the script for the extra credit.
-
-
+Git: https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/ 
+   Showed how to use the git commands, including add/commit/push and fetch/merge/pull.
+   
+Clone: pattonsgirl.github.io/CEG2350/Topics/GitHubClassroom/
+   Explained how to generate and find an ssh key and how to clone your repository.
+   
+IO Redirection: https://www.geeksforgeeks.org/linux-unix/input-output-redirection-in-linux/
+   Showed what all of the redirection symbols do, with examples.
+   
+Bash scripting: https://ioflood.com/blog/bash-random-number/
+   Showed how to generate random numbers within bash.
+   
+Bash syntax: https://www.w3schools.com/bash/bash_syntax.php
+   Explains command running order, comments, and semicolons for bash scripts.
