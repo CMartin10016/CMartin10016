@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "Enter a number: "
-read num
+if [[ $# -eq 0 ]] then
+	echo "ERROR: No argument given"
 
-if [[ $num -lt 1 ]] then
+elif [[ $1 -lt 1 ]] then
 	echo "ERROR: Number cannot be less than 1"
 else
-	rand_num=$((1 + RANDOM % $num))
+	rand_num=$((1 + RANDOM % $1))
 	echo "$rand_num"
 fi
