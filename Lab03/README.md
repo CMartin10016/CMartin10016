@@ -32,7 +32,7 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab03/Inst
 3. `cat nums.txt | sort -n >> all_nums.txt`
    - Explanation: Displays the contents of nums.txt, then sorts that result numerically and appends the sorted contents to all_nums.txt
 4. `cat << "DONE" > here.txt`
-   - Explanation: 
+   - Explanation:  Print the file here.txt line by line, stopping when DONE is printed to the command line.
 5. `ls -lt ~ | head`
    - Explanation: Shows all items in the current directory in long form sorted by time last edited, then filter those down to only displaying the first ten items, so the last ten items that were modified.
 6. `history | grep ".md"`
@@ -46,10 +46,11 @@ Verify that `roll` made it to your GitHub repository for this course and is in y
 
 1. Where and when did it go wrong while working on your script tasks?
 > When starting on step 2, the shebang was wrong, which caused about half an hour of testing because the error messages were misleading.
+> Attempting to set up the while loops in step 5 created an endless loop of prompting for a number that I had to exit out of the virtual lab to solve.
 2. Was anything familiar working with a new language compared to one you are used to?
-> Your reflection here
+> For loops are basically identical to java, if you opt for that formatting.
 3. Did you write good `commit` messages that refer to what tasks were completed at each commit?  What would you improve?
-> Your reflection here
+> The commit messages are maybe a little wordy and could be trimmed down.
 
 ## Part 6 - Citations / Resources
 
