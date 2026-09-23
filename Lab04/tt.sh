@@ -14,9 +14,17 @@ user-guide () {
 	echo "Prompts for confirmation, then clears all current tasks"
 }
 
+
+
 case $1 in
         add)
-                echo "add commands"
+         	if [[ $# -eq 2 ]] then
+			echo $2 >> ~/.tasks
+		else
+			echo "Input task to add: "
+			read task
+			echo $task >> ~/.tasks
+		fi	
         ;;
 
         remove)
@@ -24,7 +32,7 @@ case $1 in
         ;;
 
         view)
-                echo "view commands"
+                cat ~/.tasks
         ;;
 
         clear)
