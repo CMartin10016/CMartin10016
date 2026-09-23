@@ -14,7 +14,15 @@ user-guide () {
 	echo "Prompts for confirmation, then clears all current tasks"
 }
 
+remove_task () {
+	taskfound=grep "$1" ~/.task 
+	if [[ $taskfound -gt 0 ]] then
+		sed -i $1 ~/.task
+	else
+		echo "ERROR: $1 not found within tasks."
+	fi
 
+}
 
 case $1 in
         add)
@@ -28,7 +36,13 @@ case $1 in
         ;;
 
         remove)
-                echo "remove commands"
+		if [[ $# -eq 2 ]] then
+                        remove_task $2
+                else
+                        echo "Input task to remove: "
+                        read task
+                        remove_task $task
+                fi
         ;;
 
         view)
@@ -36,7 +50,11 @@ case $1 in
         ;;
 
         clear)
-                echo "clear commands"
+		echo "Really delete all tasks? (input y to clear)"
+		read clearinput
+		if [[ clearinput -eq "y" ]] then
+			rm ~/.tasks
+		fi
         ;;
 
         help)
