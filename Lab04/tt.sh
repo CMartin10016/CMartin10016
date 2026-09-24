@@ -15,8 +15,8 @@ user-guide () {
 }
 
 remove_task () {
-	taskfound=grep "$1" ~/.task 
-	if [[ $taskfound -gt 0 ]] then
+	taskfound=$(grep "$1" ~/.task) 
+	if [[ $taskfound -gt 0 ]]; then
 		sed -i $1 ~/.task
 	else
 		echo "ERROR: $1 not found within tasks."
@@ -26,7 +26,7 @@ remove_task () {
 
 case $1 in
         add)
-         	if [[ $# -eq 2 ]] then
+         	if [[ $# -eq 2 ]]; then
 			echo $2 >> ~/.tasks
 		else
 			echo "Input task to add: "
@@ -36,7 +36,7 @@ case $1 in
         ;;
 
         remove)
-		if [[ $# -eq 2 ]] then
+		if [[ $# -eq 2 ]]; then
                         remove_task $2
                 else
                         echo "Input task to remove: "
@@ -52,7 +52,7 @@ case $1 in
         clear)
 		echo "Really delete all tasks? (input y to clear)"
 		read clearinput
-		if [[ clearinput -eq "y" ]] then
+		if [[ clearinput = "y" ]]; then
 			rm ~/.tasks
 		fi
         ;;
