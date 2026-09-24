@@ -15,7 +15,27 @@ Verify that `tt` made it to your GitHub repository for this course and is in you
 
 ### User Guide
 
-Fill in with your user guide here - make sure you are focusing on good *markdown* formatting
+## Task Tracker Commands:
+
+### ADD:
+> bash tt.sh add [TASK] | bash tt.sh add
+
+Adds given argument to list of tasks, or if no argument is given, asks for input and adds task.
+
+### REMOVE:
+> bash tt.sh remove [TASK] | bash tt.sh remove
+
+Removes given argument or input to list of tasks, or if task does not exist, reports error.
+
+### VIEW:
+> bash tt.sh view
+
+Outputs all current tasks.
+
+### CLEAR:
+> bash tt.sh clear
+
+Prompts for confirmation, then clears all current tasks.
 
 ### Sample runs
 
