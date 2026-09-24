@@ -15,8 +15,8 @@ user-guide () {
 }
 
 remove_task () {
-	taskfound=$(grep "$1" ~/.task) 
-	if [[ $taskfound -gt 0 ]]; then
+	grep -q "$1" ~/.task) 
+	if [[ $? -eq 0 ]]; then
 		sed -i $1 ~/.task
 	else
 		echo "ERROR: $1 not found within tasks."
