@@ -41,48 +41,70 @@ Prompts for confirmation, then clears all current tasks.
 
 Example of using `add` task
 ```
-show blocks
-of copy / pasted runs
-of your script
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh add
+Input task to add:
+TASK1
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh add TASK2
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh view
+TASK1
+TASK2
 ```
 
 Example of using `remove` task
 ```
-show blocks
-of copy / pasted runs
-of your script
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh remove
+Input task to remove:
+TASK2
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh view
+TASK1
 ```
 
 Example of using `view` tasks
 ```
-show blocks
-of copy / pasted runs
-of your script
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh view
+TASK1
+TASK2
 ```
 
 Example of using `clear` tasks
 ```
-show blocks
-of copy / pasted runs
-of your script
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh clear
+Really delete all tasks? (input y to clear)
+y
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh view
+cat: /home/ubuntu/.tasks: No such file or directory
 ```
 
 Example of using `help`
 ```
-show blocks
-of copy / pasted runs
-of your script
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab04$ bash tt.sh help
+Task Tracker Commands:
+ADD:
+bash tt.sh add [TASK] | bash tt.sh add
+Adds given argument to list of tasks, or if no argument is given, asks for input and adds task.
+
+REMOVE:
+bash tt.sh remove [TASK] | bash tt.sh remove
+Removes given argument or input to list of tasks, or if task does not exist, reports error.
+
+VIEW:
+bash tt.sh view
+Outputs all current tasks.
+
+CLEAR:
+bash tt.sh clear
+Prompts for confirmation, then clears all current tasks.
 ```
 
 ## Part 3 - PATH for all
 
-- Chosen PATH directory:  
-- Link preference (hard or symbolic):
-   - Justification of preference for this use case:
-- Command to create link:
-- Notes about permissions modified: 
-- How you tested that you can run `tt` from anywhere on filesystem:
-- How you tested that other users can run `tt`:
+- Chosen PATH directory: /usr/bin 
+- Link preference (hard or symbolic): hard
+   - Justification of preference for this use case: I would like the link to refer to the inode directly, instead of tt.sh, so changes to tt.sh do not change the link
+- Command to create link: sudo ln ~/git/CMartin10016/Lab04/tt.sh testtracker
+- Notes about permissions modified: chmod 751 testtracker
+- How you tested that you can run `tt` from anywhere on filesystem: cd to home directory, then run bash testtracker view
+- How you tested that other users can run `tt`: Switch users to CMartin10016, then run bash testtracker view
 
 ## Part 4 - Citations / Resources
 
