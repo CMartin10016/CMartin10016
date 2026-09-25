@@ -108,8 +108,9 @@ Prompts for confirmation, then clears all current tasks.
 
 ## Part 4 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
-
-## Extra Credit
-
-Note here *what* you did to the script for the extra credit, resources referenced, and provide additional demonstrations or user guide updates similar to Part 2.
+Scripting: https://www.geeksforgeeks.org/linux-unix/sed-command-in-linux-unix-with-examples/
+   Explained how to use the sed command.
+Markdown: https://www.markdownguide.org/basic-syntax/
+   Explained how to format markdown text.
+PATH and Linking: https://askubuntu.com/questions/108771/what-is-the-difference-between-a-hard-link-and-a-symbolic-link
+   Explained the difference between hard and symbolic links.
