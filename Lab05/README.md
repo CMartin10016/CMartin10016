@@ -1,20 +1,20 @@
 ## Lab 05
 
-- Name:
-- Email: 
+- Name: Connor Martin
+- Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab05/Instructions.html
 
 ## Part 1 - grep
 
 1. How many logs use a client IP that starts with `192`?
-    - `grep` command: 
-    - Number of matched lines: 
-    - Explanation of pattern:
+    - `grep` command: grep -cE "^192" access.log
+    - Number of matched lines: 28
+    - Explanation of pattern: "^192" catches only starting instances of 192
 2. How many logs request page `/faq`?
-    - `grep` command: 
-    - Number of matched lines: 
-    - Explanation of pattern:
+    - `grep` command: grep -cE "/faq" access.log
+    - Number of matched lines: 2
+    - Explanation of pattern: "/faq" just catches every instance of /faq being printed, which is unique enough to not be mistaken for anything else
 3. How many logs have a client IP that contains `1` in the third octet?
     - `grep` command: 
     - Number of matched lines: 
