@@ -24,18 +24,18 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab05/Inst
     - Number of matched lines: 10
     - Explanation of pattern: Two alternate paths exist to check if the page is immediate or within a folder, which can be skipped by checking for \w+\/ (any word and another /) and then looking for a c.
 5. How many logs contains request between 1:20 PM and 1:30 PM?
-    - `grep` command: grep -cE "\d:13:2[0-9]|\d:13:30" access.log
+    - `grep` command: grep -cE "13:2[0-9]|13:30" access.log
     - Number of matched lines: 22
-    - Explanation of pattern: Gets all lines that have any number, then a colon, then a 13, and either a 2 followed by any number or a 30.
+    - Explanation of pattern: Gets all lines that have a 13, and either a 2 followed by any number or a 30.
 
 ## Part 2 - sed
 
-1. `sed -i 's/<\/\b\w+\b>//g' sedfile.md`
-2. `sed -i 's/\s<li>/-' sedfile.md`
-3. `sed command goes here`
-4. `sed command goes here`
-5. `sed command goes here`
-6. `sed command goes here`
+1. `sed -i 's/<\/\h1>//g' sedfile.md`, `sed -i 's/<\/\h2>//g' sedfile.md`, `sed -i 's/<\/\li>//g' sedfile.md`, `sed -i 's/<\/\ul>//g' sedfile.md`, and `sed -i 's/<\/\html>//g' sedfile.md`
+2. `sed -i 's/\s<li>/- /g' sedfile.md`
+3. `sed -i 's/<h1>/# /g' sedfile.md`
+4. `sed -i 's/<h2>/## /g' sedfile.md`
+5. `sed -i 's/<ul>//g' sedfile.md`, then `sed -i 's/<html>//g' sedfile.md`
+6. `sed -i 's/Batches/Matches/g' sedfile.md`
 
 ## Part 3 - awk
 
