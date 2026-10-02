@@ -39,11 +39,11 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab05/Inst
 
 ## Part 3 - awk
 
-1. `awk command goes here`
-2. `awk command goes here`
-3. `awk command goes here`
-4. `awk command goes here`
-5. `awk command goes here`
+1. `awk '/2024-02/ {print}' sales.txt`
+2. `awk '$5 >= 100 {print $2}' sales.txt`
+3. `awk '/TV/ {print $2 " " $4}' sales.txt`
+4. `awk '/Kitchen/ { sum += $6 } END { printf "%d\n", sum }' sales.txt`
+5. `awk '{gsub(/Sofa/, "Couch")}1' sales.txt > updated-sales.txt`
 
 ## Part 4 - Citations / Resources
 
