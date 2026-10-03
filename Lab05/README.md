@@ -47,8 +47,11 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab05/Inst
 
 ## Part 4 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
-
-## Citations
-
-To add citations, provide the site and a summary of what it assisted you with.  If generative AI was used, include which generative AI system was used and what prompt(s) you fed it.  Generative AI may not write your script for you, only assist with component and how to type questions.
+regex: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet
+    Explained the syntax for using regular expressions.
+grep: https://man7.org/linux/man-pages/man1/grep.1.html
+    Explained what the options for grep do.
+sed: https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
+    Explained the syntax for finding and replacing with sed.
+awk: https://superuser.com/questions/1626447/replacing-words-with-specified-words-using-awk
+    Explained how to find and replace with awk.
