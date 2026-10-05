@@ -9,11 +9,18 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab06/Inst
 
 It is important that the following is added to or exists in the user's `.bashrc` file
 ```
-section related to `.bash_aliases` found in `.bashrc`
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 ```
 
 What this section does:
-> explanation here
+> Reads from '.bash_aliases' for aliases, if it exists. If this was not here, you would have to add all aliases to '.bashrc'.
 
 Make sure you copied your `.bash_aliases` file to your GitHub repository.
 
