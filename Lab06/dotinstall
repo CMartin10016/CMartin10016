@@ -8,4 +8,26 @@ printHelp () {
 	echo "	-r remove - removes an alias from .bash_aliases file"
 }
 
-printHelp
+while getopts ":hsda:r:" opt; do
+  case $opt in
+    h) 
+	    printHelp 
+	    ;;
+    s) 
+	    echo "s" 
+	    ;;
+    d) 
+	    echo "d" 
+	    ;;
+    a) 
+	    echo "a" 
+	    ;;
+    r) 
+	    echo "r" 
+	    ;;
+    \?) 
+	    echo "Option not supported"
+	   printHelp 
+	    ;;
+  esac
+done
