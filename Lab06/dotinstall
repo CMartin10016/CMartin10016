@@ -1,0 +1,11 @@
+#!/bin/bash
+
+printHelp () {
+	echo "Usage: dotinstall [-OPTION] [ARG]"
+	echo "	-s setup - attempts to create a symbolic link .bash_aliases file to user's home directory"
+	echo "	-d disconnect - removes symbolic link"
+	echo "	-a append - adds a new alias to .bash_aliases file"
+	echo "	-r remove - removes an alias from .bash_aliases file"
+}
+
+printHelp
