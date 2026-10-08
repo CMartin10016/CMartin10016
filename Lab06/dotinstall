@@ -8,6 +8,24 @@ printHelp () {
 	echo "	-r remove - removes an alias from .bash_aliases file"
 }
 
+createSymbolicLink () {
+	echo "blahblah"	
+}
+
+appendAlias () {
+	echo "$1" >> .bash_aliases
+}
+
+removeAlias () {
+        grep -q "$1" .bash_aliases
+        if [[ $? -eq 0 ]]; then
+                sed -i "/$1/d" .bash_aliases
+        else
+                echo "ERROR: No matching alias found."
+        fi
+
+}
+
 while getopts ":hsda:r:" opt; do
   case $opt in
     h) 
@@ -20,10 +38,10 @@ while getopts ":hsda:r:" opt; do
 	    echo "d" 
 	    ;;
     a) 
-	    echo "a" 
+	    appendAlias "$OPTARG"
 	    ;;
     r) 
-	    echo "r" 
+	    removeAlias "$OPTARG" 
 	    ;;
     \?) 
 	    echo "Option not supported"
