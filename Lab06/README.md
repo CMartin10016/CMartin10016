@@ -37,16 +37,9 @@ your GitHub repository
 
 ## Part 4 - `dotinstall` Usage Guide
 
-THIS SHOULD ALL BE REMOVED AND REPLACED WITH ONLY YOUR USAGE GUIDE TEXT
-
-Examples of script usage and output. This should be enough info that  
-you can hand this and the script to someone not in this course and they  
-would be able to understand what your script does and how to use it.
-
-Use good markdown so that this documentation is pretty and clean on GitHub.
-
 ### `.bash_aliases`
-Describe your script in plain English, nothing too technical.  Think about this as describing what you made over the dinner table.
+
+
 
 ### `dotinstall`
 
@@ -55,8 +48,32 @@ Describe your script in plain English, nothing too technical.  Think about this 
 ### Examples
 
 ```
-By using the triple quotes, you can enclose a block of code
-And code blocks look very professional
+bash dotinstall -sa "alias fortune_teller=fortune | cowsay -f tux"
+No .bash_aliases file found in home
+Creating symbolic link in home named .bash_aliases
+Adding alias to .bash_aliases...
+User should the following to reload the shell:
+  source ~/.bashrc
+```
+
+```
+bash dotinstall -r "alias fortune_teller='fortune | cowsay -f tux'"
+Found alias for alias fortune_teller='fortune | cowsay -f tux' in .bash_aliases...
+Alias for alias fortune_teller='fortune | cowsay -f tux' removed from .bash_aliases
+```
+
+```
+bash dotinstall -d
+Removing symbolic link in home named .bash_aliases
+```
+
+```
+bash dotinstall -h
+Usage: dotinstall [-OPTION] [ARG]
+        -s setup - attempts to create a symbolic link .bash_aliases file to user's home directory
+        -d disconnect - removes symbolic link
+        -a append - adds a new alias to .bash_aliases file
+        -r remove - removes an alias from .bash_aliases file
 ```
 
 ## Part 5 - Citations / Resources
