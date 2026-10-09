@@ -9,19 +9,49 @@ printHelp () {
 }
 
 createSymbolicLink () {
-	echo "blahblah"	
+	homeAlias=~/.bash_aliases
+	if [[ -e "$homeAlias" ]]; then {
+		echo ".bash_aliases already exists. Overwrite? (y)"
+		read overwriteInput
+		if [[ overwriteInput -eq "y" ]]; then
+			rm ~/.bash_aliases
+			ln -s $PWD/.bash_aliases ~/.bash_aliases
+		fi
+	}
+	else {
+		echo "No .bash_aliases file found in home"
+		echo "Creating symbolic link in home named .bash_aliases"
+		ln -s $PWD/.bash_aliases ~/.bash_aliases
+	}
+	fi
+}
+
+removeSymbolicLink () {
+	if [[ -e ~/.bash_aliases ]]; then {
+                echo "Removing symbolic link in home named .bash_aliases"
+        	unlink ~/.bash_aliases
+        }
+        else {
+                echo "ERROR: No link exists to remove."
+        }
+        fi
 }
 
 appendAlias () {
+	echo "Adding alias to .bash_aliases..."
 	echo "$1" >> .bash_aliases
+	echo "User should the following to reload the shell:"
+        echo "  source ~/.bashrc"
 }
 
 removeAlias () {
         grep -q "$1" .bash_aliases
         if [[ $? -eq 0 ]]; then
+		echo "Found alias for $1 in .bash_aliases..."
                 sed -i "/$1/d" .bash_aliases
+		echo "Alias for $1 removed from .bash_aliases"
         else
-                echo "ERROR: No matching alias found."
+                echo "ERROR: $1 not found in .bash_aliases."
         fi
 
 }
@@ -32,10 +62,10 @@ while getopts ":hsda:r:" opt; do
 	    printHelp 
 	    ;;
     s) 
-	    echo "s" 
+	    createSymbolicLink 
 	    ;;
     d) 
-	    echo "d" 
+	    removeSymbolicLink
 	    ;;
     a) 
 	    appendAlias "$OPTARG"
