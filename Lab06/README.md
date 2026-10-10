@@ -22,28 +22,23 @@ fi
 What this section does:
 > Reads from '.bash_aliases' for aliases, if it exists. If this was not here, you would have to add all aliases to '.bashrc'.
 
-Make sure you copied your `.bash_aliases` file to your GitHub repository.
-
 ## Part 2 - Dot Install Script
-
-Nothing to write here, just a reminder to make sure your `dotinstall` script is in 
-your GitHub repository
 
 ## Part 3 - Retrospective
 
-1.
-2.
-3.
+1. Getopts allows you to create your own options (like the -lah in ls -lah) for your commands, which you can then define similarly to a switch case.
+2. I had a lot of trouble with figuring out how to create a symbolic link with the same time without creating a link that just pointed to itself. I had to look at forums online to figure out what the problem was, which helped a lot.
+3. There could be an option that allows you to see what aliases currently exist (cat .bash_aliases).
 
 ## Part 4 - `dotinstall` Usage Guide
 
 ### `.bash_aliases`
 
-
+.bash_aliases is a file within the current directory that keeps a record of every alias that the user inputs, and allows them to be used. Aliases added using **-a** will be put here and will then be able to be used until removed with **-r**.
 
 ### `dotinstall`
 
-Describe your script in plain English, nothing too technical.  Think about this as describing what you made over the dinner table.
+dotinstall is a command that allows the user to manipulate the .bash_aliases file. **-a** creates user inputted aliases in a .bash_aliases file within the current directory, while **-r** removes aliases that the user provides. **-s** creates a link from .bash_aliases to the user's home directory, allowing the aliases to be used, while **-d** unlinks it. **-h** can be used to show all options and their effects.
 
 ### Examples
 
@@ -78,10 +73,8 @@ Usage: dotinstall [-OPTION] [ARG]
 
 ## Part 5 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
+.bash_aliases & .bash_rc: https://www.redhat.com/en/blog/how-create-alias-linux
+> Explained how to create aliases and reference them.
 
-## Extra Credit - Improvements
-
-Note here *what* you did to the script for the extra credit, resources referenced, and provide additional demonstrations or user guide updates
-
-
+getopts: https://ostechnix.com/parse-arguments-in-bash-scripts-using-getopts/
+> Explained how to pass in arguments to functions using getopts.
