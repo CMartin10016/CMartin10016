@@ -1,41 +1,41 @@
 ## Lab 07
 
-- Name:
-- Email:
+- Name: Connor Martin
+- Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab07/Instructions.html
 
 ## System Discovery
 
 1. **CPU info**
-    - CPU brand & model:
-    - Number of cores:
-    - Number of logical processors:
+    - CPU brand & model: 12th Gen Intel Core i5-1235U
+    - Number of cores: 10
+    - Number of logical processors: 12
 2. **GPU info**
-    - Integrated GPU brand & model:
-    - Dedicated GPU brand & model: 
-    - Link to driver software for GPU: 
+    - Integrated GPU brand & model: Intel UHD Graphics
+    - Dedicated GPU brand & model: N/A
+    - Link to driver software for GPU: https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=955hj 
 3. **Memory info**
-    - Physical memory (RAM) size (in GB):
-    - RAM used at system startup (in GB):
+    - Physical memory (RAM) size (in GB): 8
+    - RAM used at system startup (in GB): 0.31
 4. **Storage info** 
-    - Disk 1 type: [HDD, SSD, NVME]
-    - Disk 1 brand & model:
-    - Total Disk 1 size (in GB):
+    - Disk 1 type: SSD
+    - Disk 1 brand & model: BC711 NVMe SK kynix
+    - Total Disk 1 size (in GB): 256
 5. **Primary partition / volume info**
-    - Primary partition mount point:
-    - Total space on primary partition (in GB):
-    - Space remaining on primary partition (in GB):
-    - Filesystem on primary partition:
+    - Primary partition mount point: c:
+    - Total space on primary partition (in GB): 238
+    - Space remaining on primary partition (in GB): 138
+    - Filesystem on primary partition: 
 6. **Motherboard info** 
     - BIOS / UEFI manufacturer & version: 
     - How to access BIOS / UEFI:
     - How to enable CPU virtualization: 
     - Link to driver(s) from system manufacturer: 
 7. **OS info**
-    - Operating System name & version:  
-    - Kernel for operating system:
-    - Bootloader:
+    - Operating System name & version: Windows 11 Pro 25H2 
+    - Kernel for operating system: NT Kernel
+    - Bootloader: BOOTMGR
 
 ## Part 2 - Virtualize the Machine
 
