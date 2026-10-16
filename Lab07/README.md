@@ -28,10 +28,10 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab07/Inst
     - Space remaining on primary partition (in GB): 138
     - Filesystem on primary partition: 
 6. **Motherboard info** 
-    - BIOS / UEFI manufacturer & version: 
-    - How to access BIOS / UEFI:
-    - How to enable CPU virtualization: 
-    - Link to driver(s) from system manufacturer: 
+    - BIOS / UEFI manufacturer & version: Dell Inc. 1.40.0 (UEFI)
+    - How to access BIOS / UEFI: Settings > System > Recovery > Advanced startup > Restart now. Then select Troubleshoot > Advanced options > UEFI Firmware Settings > Restart
+    - How to enable CPU virtualization: Start > Search "Turn Windows features on or off" > Check "Virtual Machine Platform" > Press OK to confirm
+    - Link to driver(s) from system manufacturer: https://www.dell.com/support/product-details/en-us/product/latitude-5430-laptop/drivers
 7. **OS info**
     - Operating System name & version: Windows 11 Pro 25H2 
     - Kernel for operating system: NT Kernel
