@@ -54,8 +54,8 @@ Typed "blah blah blah blah"
 
 ## Citations
 
-N/A
+Making a Git repo: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
+  Explained how to intialize a Git repository.
 
-
-
-
+Command Line Navigation: www.geeksforgeeks.org/linux-unix/cd-command-in-linux-with-examples/
+  Explained how to use cd to move directories.
