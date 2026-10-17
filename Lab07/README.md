@@ -173,4 +173,8 @@ Confirmation of output (how to verify the report results)
 
 ## Part 5 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
+Finding system information: https://man7.org/linux/man-pages/man1/lscpu.1.html
+    Explained how to use lscpu to find cpu info.
+
+Creating a VM: https://www.virtualbox.org/manual/topics/create-vm.html
+    Explained how to create a virtual machine using virtualbox.
