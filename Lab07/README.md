@@ -40,101 +40,137 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab07/Inst
 ## Part 2 - Virtualize the Machine
 
 1. **Virtual Machine Manager**
-    - Software & version:
-    - Link to software URL: 
-    - ![screenshot of installed & running software](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+    - Software & version: Oracle VirtualBox
+    - Link to software URL: https://www.virtualbox.org/wiki/Downloads
+    - ![screenshot of installed & running software](https://github.com/CMartin10016/CMartin10016/blob/main/Lab07/Screenshot%202026-10-16%20174801.png)
 
 2. **Guest OS information**
-    - Linux distribution selected:
-    - URL ISO downloaded from: 
+    - Linux distribution selected: Ubuntu
+    - URL ISO downloaded from: http://releases.ubuntu.com/26.10/
 
 3. **Guest VM resource allocations**
-    - Number of Virtual CPUs:
-    - RAM: 
-    - Hard disk space: 
+    - Number of Virtual CPUs: 4
+    - RAM: 2048 MB
+    - Hard disk space: 35 GB
 
 4. **Guest OS Installation**
     - Steps to install and then start the installed guest operating system:
-    1. 
-    2. 
-    3. 
-    - ![screenshot of installed & running Guest OS in VM](RELATIVE_PATH_TO_SCREENSHOT_IN_FOLDER)
+    1. Find OS ISO
+    2. Use VirtualBox to set up VM using ISO
+    3. Use VirtualBox to run VM
+    - ![screenshot of installed & running Guest OS in VM](https://github.com/CMartin10016/CMartin10016/blob/main/Lab07/Screenshot%202026-10-16%20185714.png)
 
 ## Part 3 - Virtual Playground:
 
 How-to guides for some common tasking on my guest OS
 
-My guest OS is: [INSERT YOUR GUEST OS]
+My guest OS is: Ubuntu
 
 1. **Customizing the desktop background**
-    - steps
-    - go 
-    - here
+    - Open Firefox and find image
+    - Right Click -> Save Image As, name it anything
+    - Right Click on desktop -> Change Desktop background
+    - Navigate to Background and Add Picture
+    - Select image from Files
 
 2. **Installing VSCode**
-    - steps
-    - go 
-    - here
+    - Use Firefox to navigate to https://code.visualstudio.com/ -> Download
+    - Install the Ubuntu version of VSCode
+    - Navigate to Files in hotbar and find VSCode installer
+    - Run VSCode installer
 
 3. **Sharing a clipboard or folder between your host and guest OS**
-    - steps
-    - go 
-    - here
+    - Turn on and navigate to guest OS
+    - Devices -> use Insert Guest Additions CD Image
+    - Machine -> Settings
+    - General -> Features -> set Shared Clipboard to bidirectional
+    - Also in Machine -> Settings, Shared Folders allows you to add folders
     
 4. **Cloning my course repository**
-    - steps
-    - go 
-    - here
+    - Go to repo, open Code
+    - Copy https url
+    - Open git bash
+    - Enter "git clone [URL]"
 
 5. **Connecting to my AWS instance from the VM using `ssh`**
-    - steps
-    - go 
-    - here
+    - Go to AWS instance using Firefox
+    - Open AWS details and download PEM SSH key
+    - Go to Show Apps on the hotbar
+    - Search for Terminal and open
+    - Enter "ssh -i '[PATH TO PEM KEY]' [IP ADDRESS]"
 
 ## Part 4 - System Reports
 
 System Report for AWS instance:
 
-INSERT REPORT OUTPUT HERE
+========================================
+           SYSTEM SUMMARY
+========================================
+[OS/Kernel]
+Hostname: ceg2350-sandbox
+Kernel:   Linux 7.0.0-1013-aws
+
+[CPU Info]
+Model name:                              Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+Thread(s) per core:                      1
+Core(s) per socket:                      1
+Socket(s):                               1
+
+[RAM Usage]
+          total        used        free
+Mem:    952Mi     310Mi     329Mi
+
+[Disk Space]
+Filesystem     Size     Used     Use% Usage
+/dev/root      15G      4.1G      28%
+
+[GPU Info]
+00:02.0 VGA compatible controller: Cirrus Logic GD 5446
+========================================
 
 Confirmation of output (how to verify the report results)
-- OS and kernel version:
-- CPU info:
-- RAM usage:
-- Disk space usage:
-- GPU info:
+- OS and kernel version: uname -sr in terminal
+- CPU info: lscpu in terminal
+- RAM usage: free -h in terminal
+- Disk space usage: df -h in terminal
+- GPU info: echo "$(lspci | grep -i 'vga\|3d\|display')" in terminal
 
 ---
 
 System Report for Linux Virtual Machine:
 
-INSERT REPORT OUTPUT HERE
+========================================
+           SYSTEM SUMMARY
+========================================
+[OS/Kernel]
+Hostname: CEGVM
+Kernel:   Linux 7.3.0-9-generic
+
+[CPU Info]
+Model name:                              12th Gen Intel® Core™ i5-1235U
+Thread(s) per core:                      1
+Core(s) per socket:                      1
+Socket(s):                               1
+
+[RAM Usage]
+          total        used        free
+Mem:    3.2Gi     1.6Gi     127Mi
+
+[Disk Space]
+Filesystem     Size     Used     Use% Usage
+/dev/sda2      25G      6.4G      28%
+
+[GPU Info]
+00:02.0 VGA compatible controller: VMware SVGA II Adapter
+========================================
 
 Confirmation of output (how to verify the report results)
-- OS and kernel version:
-- CPU info:
-- RAM usage:
-- Disk space usage:
-- GPU info:
+- OS and kernel version: Go into Settings and System
+- CPU info: Go into Settings and System
+- RAM usage: Install the system-monitor extension using "sudo apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0", then run it
+- Disk space usage: Install the system-monitor extension using "sudo apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0", then run it
+- GPU info: Install hardinfo using "sudo apt-get install hardinfo", then run it
 
 ## Part 5 - Citations / Resources
 
 Add citations / resources for each core topic covered in this lab
-
-
-## Extra Credit - It's Not All Linux
-
-Generative AI used to create script:
-
-Make sure to add your script to your repository
-
-System Report for [WINDOWS | MAC] OS:
-
-INSERT REPORT OUTPUT HERE
-
-Confirmation of output (how to verify the report results)
-- OS and kernel version:
-- CPU info:
-- RAM usage:
-- Disk space usage:
-- GPU info:
