@@ -1,7 +1,7 @@
 ## Lab 08
 
-- Name:
-- Email:
+- Name: Connor Martin
+- Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab08/Instructions.html
 
@@ -10,35 +10,49 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab08/Inst
 1. `ssh` commands for connecting to each of your sandboxes:
 ```bash
 # to connect to original sandbox with cloned GitHub repo:
+ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
 
 # to connect to new sandbox for this lab:
-
+ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@184.197.46.249
 ```
 
 2. Options commonly used in a `config` file for `ssh`:
 
 | `ssh` `config` Option   | Description  |
 |---------------|------------------------|
-| `Host`        |                        |
-| `HostName`    |                        |
-| `User`        |                        |
-| `Port`        |                        |
-| `IdentityFile`|                        |
+| `Host`        |  Alias for host                      |
+| `HostName`    |  IP of host                      |
+| `User`        |  Login name                      |
+| `Port`        |  Port used to connect                      |
+| `IdentityFile`|  ID Key used to connect                      |
 
 3. `ssh` `config` file contents:
 ```
 # entry to connect to original sandbox with cloned GitHub repo:
+# ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
+Host mainaws
+	HostName 35.172.45.112
+	User ubuntu
+	Port 22
+	IdentityFile C:\Users\1n21g\Downloads\labsuser.pem
+
 
 # entry to connect to new sandbox for this lab:
-
+# ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@184.197.46.249
+Host secondaws
+	HostName 184.197.46.249
+	User ubuntu
+	Port 22
+	IdentityFile C:\Users\1n21g\Downloads\labsuser.pem
 ```
 
 4. `ssh` commands that make use of `config` file entries:
 ```bash
 # to connect to original sandbox with cloned GitHub repo:
+ssh mainaws
 
 # to connect to new sandbox for this lab:
-
+ssh second aws
 ```
 
 ## Part 2
@@ -47,12 +61,12 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab08/Inst
 
 | Command    | Description | Example |
 |------------|-------------|---------|
-| `lsblk`    |             |         |
-| `blkid`    |             |         |
-| `parted`   |             |         |
-| `gdisk`    |             |         |
-| `gdisk -l` |             |         |
-| `strings`  |             |         |
+| `lsblk`    |  Lists information about all block devices           |  lsblk       |
+| `blkid`    |  Shows data from block devices           | blkid        |
+| `parted`   |  Manipulate partitions           | parted [disk]        |
+| `gdisk`    |  Manipulate partition tables           | gdisk [disk]        |
+| `gdisk -l` |  Lists partition tables           | gdisk -l        |
+| `strings`  |  Searches for printable strings in file           | strings [file]        |
 
 **Filesystem Management Commands**
 
