@@ -72,13 +72,13 @@ ssh second aws
 
 | Command      | Description | Example |
 |--------------|-------------|---------|
-| `df -h`      |             |         |
-| `/etc/fstab` |             |         |
-| `mkfs`       |             |         |
-| `mount`      |             |         |
-| `umount`     |             |         |
-| `mount -a`   |             |         |
-| `shred`      |             |         |
+| `df -h`      | Displays disk space information            | df -h        |
+| `/etc/fstab` | File that sets up mounting every boot            | cat /etc/fstab        |
+| `mkfs`       | Makes a file system            | mkfs [partion name]        |
+| `mount`      | Attach a file system to be read            |         |
+| `umount`     | Unmount a file system            |         |
+| `mount -a`   | Mounts all systems listed in fstab            | mount -a        |
+| `shred`      | Removes a file by deleting it and then writing over it            | shred [file]        |
 
 ## Part 3 - What do we have?
 
