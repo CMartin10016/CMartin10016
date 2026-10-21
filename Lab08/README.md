@@ -82,40 +82,76 @@ ssh second aws
 
 ## Part 3 - What do we have?
 
-1. Command:
+1. Command: lsblk xvda
 ```
-Output here
+ubuntu@disklab-sandbox:/dev$ lsblk xvda
+NAME     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+xvda     202:0    0   16G  0 disk
+├─xvda1  202:1    0   15G  0 part /
+├─xvda14 202:14   0    4M  0 part
+├─xvda15 202:15   0  106M  0 part /boot/efi
+└─xvda16 259:0    0  913M  0 part /boot
 ```
-2. Command:
+2. Command: "sudo parted xvda", then "print"
 ```
-Output here
+ubuntu@disklab-sandbox:/dev$ sudo parted xvda
+GNU Parted 3.6
+Using /dev/xvda
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted) print
+Model: Xen Virtual Block Device (xvd)
+Disk /dev/xvda: 17.2GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name  Flags
+14      1049kB  5243kB  4194kB                     bios_grub
+15      5243kB  116MB   111MB   fat32              boot, esp
+16      116MB   1074MB  957MB   ext4               bls_boot
+ 1      1075MB  17.2GB  16.1GB  ext4
 ```
 3. For the `xvda` partition table:
-    - Does it use MBR or GPT?
-    - How many partitions are on the block device?
-    - What is the largest partition?
-4. Command:
+    - Does it use MBR or GPT? GPT
+    - How many partitions are on the block device? 4
+    - What is the largest partition? xvda14
+4. Command: sudo blkid | grep -E "^/dev/xvda"
 ```
-Output here
+ubuntu@disklab-sandbox:/dev$ sudo blkid | grep -E "^/dev/xvda"
+/dev/xvda16: LABEL="BOOT" UUID="91942573-b0ea-4e42-8692-2a195de77cba" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="0f03bd19-c47e-4864-9884-634fc120fb03"
+/dev/xvda1: LABEL="cloudimg-rootfs" UUID="104656f3-cbcd-4c1a-bbe2-5bb510be86c0" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="2bb9818b-3393-4017-8da7-c739e7b96eac"
+/dev/xvda15: LABEL_FATBOOT="UEFI" LABEL="UEFI" UUID="534B-8AD0" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="1179273d-96b8-4541-b634-ffe44e498cd0"
+/dev/xvda14: PARTUUID="5ec5cc0b-28cf-468c-a6e5-61c8f025ccc3"
 ```
 5. For the primary partition:
-    - What partition is the root filesystem on?
-    - What is the partition label?
-    - What type of filesystem is on the partition?
-6. Command:
+    - What partition is the root filesystem on? xvda1
+    - What is the partition label? cloudimg-rootfs
+    - What type of filesystem is on the partition? ext4
+6. Command: df -h
 ```
-Output here
+ubuntu@disklab-sandbox:/dev$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        15G  3.1G   12G  22% /
+tmpfs           479M     0  479M   0% /dev/shm
+tmpfs           192M  872K  191M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda16     881M   76M  744M  10% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            96M   16K   96M   1% /run/user/1000
 ```
 7. For the root filesystem:
-    - What is the total size?
-    - How much space is used?
-    - Where is it mounted to?
-8. Command:
+    - What is the total size? 15G
+    - How much space is used? 3.1G
+    - Where is it mounted to? /
+8. Command: cat /etc/fstab
 ```
-Output here
+ubuntu@disklab-sandbox:/$ cat /etc/fstab
+LABEL=cloudimg-rootfs   /        ext4   discard,commit=30,errors=remount-ro     0 1
+LABEL=BOOT      /boot   ext4    defaults        0 2
+LABEL=UEFI      /boot/efi       vfat    umask=0077      0 1
 ```
 9. Fields & purpose of fields in entry that mount the root filesystem
-
+cloudimg-rootfs is the device. It is mounted to /, the type of filesystem is ext4, "discard,commit=30,errors=remount-ro" are the mount options, 0 designates no backup operation, and 1 designates that this device is first to be checked and therefore the root.
 
 ## Part 4 - Something new
 
