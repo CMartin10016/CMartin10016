@@ -198,13 +198,13 @@ list here
 ```
 6. Commands used:
 7. When can I interact with files on the filesystem on the partition in `xvdb`?
-   - Answer:
+   - Answer: Whenever it is mounted
    
 ## Part 6 - Take a `fstab` at this
 
-1. Commands used:
-2. Line you added to `/etc/fstab`:
-3. How did you confirm that the mount point changed? (Commands used or explain process):
+1. Commands used: sudo cp /etc/fstab /etc/fstab.bak
+2. Line you added to `/etc/fstab`: UUID="4cb56482-7cd9-48ce-8e1f-44cf3b5dda23" /mnt/expanse ext4 rw,relatime 0 0
+3. How did you confirm that the mount point changed? (Commands used or explain process): using "mount -a" to mount xvdb1
 4. **If you restored `/etc/fstab`**, write here why you did not feel comfortable leaving your changes in place
 
 
