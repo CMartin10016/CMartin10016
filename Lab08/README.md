@@ -159,44 +159,65 @@ cloudimg-rootfs is the device. It is mounted to /, the type of filesystem is ext
 
 | `gdisk` option | function |
 | ---            | ---      |
-| `p` |     |
-| `o` |     |
-| `n` |     |
-| `i` |     |
-| `w` |     |
+| `p` | print partition table    |
+| `o` | create empty GPT partition table    |
+| `n` | add new partition    |
+| `i` | show info on partition    |
+| `w` | write to disk and exit    |
 
 2. Steps to create a partition table and partition on `xvdb`
 
-3. Partition table on `/dev/xvdb`
+- sudo gdisk
+- o (create new partition table)
+- n (add new partition
+	- all values can be given as defaults
+ - w (write to the disk and quit)
+
+4. Partition table on `/dev/xvdb`
 ```
-Paste partition table information here
+Disk /dev/xvdb: 8388608 sectors, 4.0 GiB
+Sector size (logical/physical): 512/512 bytes
+Disk identifier (GUID): C769FF8A-28C2-413A-8BC7-EDB6AF7C4C94
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 34, last usable sector is 8388574
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 4029 sectors (2.0 MiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         8386559   4.0 GiB     8300  Linux filesystem
 ```
 
 4. Answer these questions:
    
    a. What device name does the partition use?
-      - Answer: 
+      - Answer: xvdb1
         
    b. What size is the partition in GB?
-      - Answer: 
+      - Answer: 4
         
    c. What filesystem type will be used on the partition?
-      - Answer: 
+      - Answer: Linux
 
 ## Part 5 - File it away
 
-1. Commands used:
-2. Commands used:
+1. Commands used: sudo mkfs.ext4 xvdb1
+2. Commands used: blkid | grep "/dev/xvdb1"
 ```
-output here
+ubuntu@disklab-sandbox:/mnt/expanse$ blkid | grep "/dev/xvdb1"
+/dev/xvdb1: UUID="4cb56482-7cd9-48ce-8e1f-44cf3b5dda23" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="Linux filesystem" PARTUUID="390a25c1-4dfe-4697-833f-cdeefc661ec9"
 ```
-3. Commands used:
-4. Commands used:
+3. Commands used: mkdir /mnt/expanse
+4. Commands used: sudo mount xvdb1 /mnt/expanse
 5. Contents of `/mnt/expanse`:
 ```
-list here
+file1
+file2
+dir1
+	file3
+dir2
 ```
-6. Commands used:
+6. Commands used: sudo umount -l /dev/xvdb1
 7. When can I interact with files on the filesystem on the partition in `xvdb`?
    - Answer: Whenever it is mounted
    
@@ -210,18 +231,21 @@ list here
 
 ## Part 7 - What is dead may still be read
 
-1. Commands used:
+1. Commands used: sudo vim "truth1", sudo vim "truth2"
 2. What does the `strings` command do?
-   - Answer:
-3. Write a short explanation of what you saw in `strings` output:
-4. Commands used:
-5. Is the secret you deleted still showing up in the `strings` output?
+   - Answer: prints character sequences that are at least 4 characters long
+3. Write a short explanation of what you saw in `strings` output: Extremely long gibberish; can use grep to determine that both secrets exist there
+4. Commands used: sudo rm truth2
+5. Is the secret you deleted still showing up in the `strings` output? Yes
 6. What does the `shred` command do?
-   - Answer:
+   - Answer: Writes over the data within a file, completely destroying it
 
 ### Report: How to Permanently Delete a File
 
-**Write your report here**
+1. sudo shred -v [file] (this scrambles all of the data in the file)
+	- -v allows you to see the ongoing progress
+2. rm [file] (to actually remove the gibberish file where it exists)
+3. sudo strings [file] (confirms that the information is truly gone)
 
 ## Part 8 - Citations / Resources
 
