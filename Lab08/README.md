@@ -249,9 +249,21 @@ dir2
 
 ## Part 8 - Citations / Resources
 
-Add citations / resources for each core topic covered in this lab
+ssh config: https://linuxize.com/post/using-the-ssh-config-file/
+	Explained how to write ssh config files.
 
-## Extra Credit - Create a Virtual Filesystem
+gdisk: https://www.rodsbooks.com/gdisk/walkthrough.html
+	Explained how to use gdisk and what its options do.
 
-Report on how to perform (and verify completion) of making a virtual filesystem on a loop device
+making filesystems: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/fs_create_ex2
+	Showed what the format for mkfs commands is.
+
+mounting: https://thelinuxcast.org/posts/2025/howtomountdrives/
+	Showed how to mount and unmount drives.
+
+fstab: https://www.redhat.com/en/blog/etc-fstab
+	Explained what each field in the fstab entries means.
+
+strings: https://man7.org/linux/man-pages/man1/strings.1.html
+	Explained the purpose of the strings command and its formatting.
 
