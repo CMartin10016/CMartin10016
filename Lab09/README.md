@@ -1,16 +1,16 @@
 ## Lab 09
 
-- Name:
-- Email:
+- Name: Connor Martin
+- Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab09/Instructions.html
 
 ## Part 1 - Game the system
 
-- Game name: 
-- How to install:
-- Location of game executable:
-- How to run game:
+- Game name: 2048
+- How to install: "sudo apt install gcc", "wget https://raw.githubusercontent.com/mevdschee/2048.c/master/2048.c", gcc -o 2048 2048.c
+- Location of game executable: ~/2048
+- How to run game: ./2048
 
 ## Part 2 - Process Control
 
@@ -18,44 +18,51 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab09/Inst
 
 |  Action   |  Command or Keybind   |  
 | ---       | --- | 
-| Check process CPU/memory usage |     |
-| Show running processes         |     |
-| Show detailed process tree     |     |
-| Find a process by name         |     |
-| Kill a process by PID          |     |
-| Force kill a process by PID    |     |
-| Pause / suspend a process by PID  |     |
-| Resume a suspended process by PID |     |
+| Check process CPU/memory usage | top    |
+| Show running processes         | ps aux    |
+| Show detailed process tree     | pstree    |
+| Find a process by name         | pgrep    |
+| Kill a process by PID          | kill [PID]    |
+| Force kill a process by PID    | kill -9 [PID]    |
+| Pause / suspend a process by PID  | kill -19 [PID]    |
+| Resume a suspended process by PID | kill -18 [PID]    |
 
 2. `ps` fields table:
 
 | `ps` field | Meaning |
 | ---        | ---     |
-| PID        |         |
-| PPID       |         |
-| UID / USER |         |
-| TTY        |         |
-| STAT       |         |
-| COMMAND / CMD |         |
-| %CPU       |         |
-| %MEM       |         |
-| PSR        |         |
+| PID        | Process ID        |
+| PPID       | Parent process ID        |
+| UID / USER | User that started process        |
+| TTY        | Terminal controlling process        |
+| STAT       | State of process        |
+| COMMAND / CMD | Command that started the process        |
+| %CPU       | % of CPU used by process        |
+| %MEM       | % of memory used by process        |
+| PSR        | Processor that process last used       |
 
-3. `ps` command:
+3. `ps` command: ps o uid,pid,ppid,tty,stat,cmd
 4. Output of `ps` with two shells, one running the game:
 ```
-Output of command goes here
+ubuntu@ceg2350-sandbox:~$ ps a -o uid,pid,ppid,tty,stat,cmd
+  UID     PID    PPID TT       STAT CMD
+    0     626       1 ttyS0    Ss+  /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+    0     717       1 tty1     Ss+  /sbin/agetty -o -p -- \u --noclear - linux
+ 1000    1077    1074 pts/0    Ss   -bash
+ 1000    1245    1224 pts/1    Ss   -bash
+ 1000    1400    1077 pts/0    S+   ./2048
+ 1000    1406    1245 pts/1    R+   ps a -o uid,pid,ppid,tty,stat,cmd
 ```
 5. For the game:
-   - Process id: 
-   - Parent process id: 
-   - What is the parent process: 
-6. `kill` to kill only the game:
-   - Describe what the effect was: 
-7. `kill` to kill the game and it's parent process: 
-   - Describe what the effect was:
+   - Process id: 1400
+   - Parent process id: 1077
+   - What is the parent process: bash
+6. `kill` to kill only the game: kill 1400
+   - Describe what the effect was: Exits out of game to terminal
+7. `kill` to kill the game and it's parent process: "kill [PID]", then "kill 1077"
+   - Describe what the effect was: 2048 continues to exist when parent is killed and parent process starts again immediately after. 2048 had to be killed directly before game ended.
 8. Describe what happens if you close / `exit` your connection with Shell C and determine if you can reenter the game (resume the process).
-   - Answer: 
+   - Answer: Exiting the shell does not affect the gme existing in another shell.
 
 ## Part 3 - back and fore
 
