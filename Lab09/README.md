@@ -70,34 +70,49 @@ ubuntu@ceg2350-sandbox:~$ ps a -o uid,pid,ppid,tty,stat,cmd
 
 |  Action   |  Command or Keybind   |  
 | ---       | --- | 
-| Show current jobs               |     |
-| Run a command in background     |     |
-| Pause current foreground job    |     |
-| Send job to the background      |     |
-| Bring job to the foreground     |     |
-| Kill a background / stopped job |     |
+| Show current jobs               | jobs    |
+| Run a command in background     | bg    |
+| Pause current foreground job    | CTRL + Z    |
+| Send job to the background      | bg    |
+| Bring job to the foreground     | fg    |
+| Kill a background / stopped job | kill    |
 
-2. Run in the foreground: 
-3. `STOP` signal to suspend it: 
-4. Proof of life from `ps` output:
+2. Run in the foreground: ./2048
+3. `STOP` signal to suspend it: CTRL + Z
+4. Proof of life from `ps` output: 
 ```
-insert line here
+ubuntu@ceg2350-sandbox:~$ ps
+    PID TTY          TIME CMD
+   1022 pts/0    00:00:00 bash
+   1082 pts/0    00:00:00 2048
+   1156 pts/0    00:00:00 ps
 ```
-5. Resume in the foreground:
-6. `TERMINATE` signal to kill it: 
-7. Start as a background process: 
+5. Resume in the foreground: fg
+6. `TERMINATE` signal to kill it: CTRL + C
+7. Start as a background process: "./2048", CTRL + Z, then "bg"
 8. Output of `jobs` from controlling terminal:
 ```
-Insert output here
+ubuntu@ceg2350-sandbox:~$ jobs
+[1]   Stopped                 ./2048
+[2]-  Stopped                 ./2048
+[3]+  Stopped                 ./2048
 ```
 Output of `ps`:
 ```
-Insert output here
+ubuntu@ceg2350-sandbox:~$ ps
+    PID TTY          TIME CMD
+   1022 pts/0    00:00:00 bash
+   1203 pts/0    00:00:00 2048
+   1204 pts/0    00:00:00 2048
+   1205 pts/0    00:00:00 2048
+   1206 pts/0    00:00:00 ps
+
+[3]+  Stopped                 ./2048
 ```
-9. Kill job:
-10. Move job to the foreground: 
+9. Kill job: kill -9 1203
+10. Move job to the foreground: fg %2
 11. Describe what happens, using process knowledge in your description, if you close / `exit` your connection with this shell and determine if you can reenter the game (resume the process).
-   - Answer: 
+   - Answer: If you exit this shell, the processes are still running in other terminals, meaning you can reenter the game.
 
 ## Part 4 - Detach
 
