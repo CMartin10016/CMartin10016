@@ -120,30 +120,36 @@ ubuntu@ceg2350-sandbox:~$ ps
 
 |  Action   |  Command or Keybind   |  
 | ---       | --- | 
-| Start a new session and set a name   |     |  
-| List `tmux` sessions                 |     |
-| Attach to session by name            |     |
-| Kill session by name                 |     |
-| Detach from session                  |     |
-| Split pane horizontally              |     |
-| Split pane vertically                |     |
-| Switch panes                         |     |
-| Close pane                           |     |
+| Start a new session and set a name   | tmux    |  
+| List `tmux` sessions                 | tmux ls    |
+| Attach to session by name            | tmux attach    |
+| Kill session by name                 | tmux kill-session -t [session]    |
+| Detach from session                  | CTRL + b, d    |
+| Split pane horizontally              | CTRL + b, %   |
+| Split pane vertically                | CTRL + b, "   |
+| Switch panes                         | CTRL + b, q, [pane num]   |
+| Close pane                           | CTRL + b, x   |
 
-2. Create a `tmux` session:
-3. Detach from the session:
+2. Create a `tmux` session: tmux
+3. Detach from the session: CTRL + B, then press d
 4. `ps` command:
 ```
-Output of command goes here
+ubuntu@ceg2350-sandbox:~$ ps o uid,pid,ppid,tty,stat,cmd
+  UID     PID    PPID TT       STAT CMD
+ 1000    1016    1013 pts/0    Ss   -bash
+ 1000    1073    1072 pts/1    Ss   -bash
+ 1000    1084    1073 pts/1    S+   ./2048
+ 1000    1085    1016 pts/0    R+   ps o uid,pid,ppid,tty,stat,cmd
 ```
 5. Command to list `tmux` sessions:
 ```
-Output of command goes here
+ubuntu@ceg2350-sandbox:~$ tmux ls
+0: 1 windows (created Fri Oct 30 23:07:43 2026)
 ```
 6. How can you determine if your `tmux` session with your game running is available?
-   - Answer: 
-7. Reattach to `tmux` session:
-8. Kill `tmux` session: 
+   - Answer: "tmux ls" and the ps command confirm that the game is still running even after exiting.
+7. Reattach to `tmux` session: tmux attach
+8. Kill `tmux` session: CTRL + B, then press x, then press y to confirm
 
 ## Part 5 - At Your Service
 
