@@ -62,7 +62,7 @@ ubuntu@ceg2350-sandbox:~$ ps a -o uid,pid,ppid,tty,stat,cmd
 7. `kill` to kill the game and it's parent process: "kill [PID]", then "kill 1077"
    - Describe what the effect was: 2048 continues to exist when parent is killed and parent process starts again immediately after. 2048 had to be killed directly before game ended.
 8. Describe what happens if you close / `exit` your connection with Shell C and determine if you can reenter the game (resume the process).
-   - Answer: Exiting the shell does not affect the gme existing in another shell.
+   - Answer: Exiting the shell does not affect the game existing in another shell.
 
 ## Part 3 - back and fore
 
@@ -112,7 +112,7 @@ ubuntu@ceg2350-sandbox:~$ ps
 9. Kill job: kill -9 1203
 10. Move job to the foreground: fg %2
 11. Describe what happens, using process knowledge in your description, if you close / `exit` your connection with this shell and determine if you can reenter the game (resume the process).
-   - Answer: If you exit this shell, the processes are still running in other terminals, meaning you can reenter the game.
+   - Answer: If you exit with this shell, the process will be killed, and you will not be able to continue.
 
 ## Part 4 - Detach
 
@@ -193,4 +193,14 @@ Oct 30 23:38:00 ceg2350-sandbox sudo[1496]:   ubuntu : TTY=pts/0 ; PWD=/etc/syst
 
 ## Part 6 - Citations & Resources
 
-To add citations, provide the site and a summary of what it assisted you with.  If generative AI was used, include which generative AI system was used and what prompt(s) you fed it.
+Processes: https://www.geeksforgeeks.org/linux-unix/processes-in-linuxunix/
+  Explained what the different sections in the ps command refer to.
+
+  Backgrounding jobs: https://www.redhat.com/en/blog/jobs-bg-fg
+    Explained how to put jobs into the background and then bring them back.
+
+  tmux: https://tmuxcheatsheet.com/
+    Showed all of the tmux commands and shorthands.
+
+  systemctl: https://www.redhat.com/en/blog/getting-started-systemctl
+    Showed how to use systemctl to start/enable.
