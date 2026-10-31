@@ -157,29 +157,38 @@ Investigating `disk-watchdog.sh`:
 
 [Link to `disk-watchdog.sh`](git/path/to/your/script/file)
 
-1. What command is the script using to find the disk usage percentage?  
-2. The script uses a while loop. What is the condition for this loop, and what does that mean for the process's lifespan?  
-3. At what specific percentage (%) does the script trigger a "WARNING"?  
-4. Why is sleep used in this script?
+1. What command is the script using to find the disk usage percentage? DISK_USAGE=$(df / | grep / | awk '{ print $5 }' | sed 's/%//')
+2. The script uses a while loop. What is the condition for this loop, and what does that mean for the process's lifespan?  While true; the process will never end on its own.
+3. At what specific percentage (%) does the script trigger a "WARNING"?  >80%
+4. Why is sleep used in this script? So that even though the program prints forever, the console will not be overrun with print messages.
 
 Enabling `disk-watchdog.service`:
 
 [Link to `disk-watchdog.service`](git/path/to/your/service/file)
 
-1. Command to reload `systemd`:
-2. Command(s) to start and enable `disk-watchdog.service`
-3. Command to view `disk-watchdog.service` status:
-4. How can you tell from the output that the service is actually running?
-5. What is the current PID of the service?
+1. Command to reload `systemd`: sudo systemctl daemon-reload
+2. Command(s) to start and enable `disk-watchdog.service`  sudo systemctl start disk-watchdog.service,  sudo systemctl enable disk-watchdog.service
+3. Command to view `disk-watchdog.service` status: systemctl status disk-watchdog.service
+4. How can you tell from the output that the service is actually running? The "Active: " section of the output says that it is currently running and is colored green
+5. What is the current PID of the service? 1487
 
 Triggering the warning and monitoring service logs:
 
-1. Command to view `disk-watchdog.service` logs in real time: 
-2. Command to create a large file in your home directory:
-3. Why did the `WARNING` message appear in your `disk-watchdog.service` logs?
+1. Command to view `disk-watchdog.service` logs in real time: journalctl -g "disk-watch"
+2. Command to create a large file in your home directory: fallocate -l 10G blankspace.img
+3. Why did the `WARNING` message appear in your `disk-watchdog.service` logs? The service is unable to be authenticated.
 4. Paste a snippet of your `disk-watchdog.service` logs showing normal / WARNING messages:
 ```
-logs go here
+Oct 30 23:14:52 ceg2350-sandbox sudo[1174]:   ubuntu : TTY=pts/0 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/vim disk-watchd>
+Oct 30 23:15:30 ceg2350-sandbox sudo[1188]:   ubuntu : TTY=pts/0 ; PWD=/usr/local/bin ; USER=root ; COMMAND=/usr/bin/chmod ugo+x dis>
+Oct 30 23:21:37 ceg2350-sandbox sudo[1325]:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/vim /etc/systemd/>
+Oct 30 23:29:26 ceg2350-sandbox sudo[1337]:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/vim /etc/systemd/>
+Oct 30 23:30:28 ceg2350-sandbox sudo[1346]:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/vim /etc/systemd/>
+Oct 30 23:37:26 ceg2350-sandbox polkitd[549]: Operator of unix-process:1472:222469 FAILED to authenticate to gain authorization for >
+Oct 30 23:37:33 ceg2350-sandbox sudo[1483]:   ubuntu : TTY=pts/0 ; PWD=/etc/systemd/system ; USER=root ; COMMAND=/usr/bin/systemctl >
+Oct 30 23:37:33 ceg2350-sandbox systemd[1]: Starting disk-watchdog.service - Disk Watchdog: Continuously scans disk space to ensure >
+Oct 30 23:37:33 ceg2350-sandbox systemd[1]: Started disk-watchdog.service - Disk Watchdog: Continuously scans disk space to ensure a>
+Oct 30 23:38:00 ceg2350-sandbox sudo[1496]:   ubuntu : TTY=pts/0 ; PWD=/etc/systemd/system ; USER=root ; COMMAND=/usr/bin/systemctl 
 ```
 
 ## Part 6 - Citations & Resources
