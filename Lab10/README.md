@@ -13,11 +13,15 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab10/Inst
 
 | Task                                                    | Command(s) / Steps | Notes |
 | ------------------------------------------------------- | ------------------ | ----- |
-| **Create a branch**                                     |                    |       |
-| **Change to branch**                                    |                    |       |
-| **Add branch to remote if created locally (GitHub)**    |                    |       |
-| **Steps to `merge` changes from another branch to (`main`)** |                    |       |
-| **Steps to resolve a `merge` conflict**                 |                    |       |
+| **Create a branch**                                     | git branch [branch name]                   |       |
+| **Change to branch**                                    | git switch [branch name]                   |       |
+| **Add branch to remote if created locally (GitHub)**    | git push origin [branch name]                | "origin" could be something else depending on what remote source is called      |
+| **Steps to `merge` changes from another branch to (`main`)** | 1. commit branch changes
+2. switch to main branch (git switch main)
+3. git merge [branch name]|       |
+| **Steps to resolve a `merge` conflict**                 | 1. examine listed conflicts
+2. edit file(s) so that conflict no longer occurs
+3. git add and git commit changes|       |
 
 
 ## Part 1 - Compilers
