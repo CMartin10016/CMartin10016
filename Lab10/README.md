@@ -22,11 +22,11 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab10/Inst
 
 ## Part 1 - Compilers
 
-1. Command(s) to install the C compiler and `make` on Ubuntu:
-2. Command(s) to confirm the installation of both on Ubuntu:
-3. Your computer's OS:
-4. Command(s) to install the C compiler and `make` on your computer's OS:
-5. Command(s) to confirm the installation of both on your computer's OS:
+1. Command(s) to install the C compiler and `make` on Ubuntu: "sudo apt install build-essential"
+2. Command(s) to confirm the installation of both on Ubuntu: "which gcc", gcc --version
+3. Your computer's OS: Windows
+4. Command(s) to install the C compiler and `make` on your computer's OS: Install MinGW through MSYS2, "pacman -S mingw-w64-x86_64-gcc make"
+5. Command(s) to confirm the installation of both on your computer's OS: where gcc, gcc --version
 
 ## Part 2 - Compiling
 
