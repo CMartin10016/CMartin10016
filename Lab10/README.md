@@ -30,11 +30,11 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab10/Inst
 
 ## Part 2 - Compiling
 
-1. Command(s) to download the `todo-lab.tar.gz` archive:
-2. Command(s) to extract the files from the archive:
-3. What `undefined reference` means and why the provided `Makefile` hit it:
-4. Command(s) to compile `main.c` and `todo.c` into object files:
-5. Command(s) to link the object files into `todo_app`:
+1. Command(s) to download the `todo-lab.tar.gz` archive: wget "https://raw.githubusercontent.com/pattonsgirl/CEG2350/refs/heads/main/docs/Labs/Lab10/todo-lab.tar.gz"
+2. Command(s) to extract the files from the archive: tar -xvf todo-lab.tar.gz
+3. What `undefined reference` means and why the provided `Makefile` hit it: Makefile only knows about main.c, and does not have access to the expected functions
+4. Command(s) to compile `main.c` and `todo.c` into object files: gcc -c main.c/todo.c
+5. Command(s) to link the object files into `todo_app`: gcc -o todo_app main.o todo.o
 6. Command(s) to run the program:
 
 ## Part 3 - Git Hygiene
