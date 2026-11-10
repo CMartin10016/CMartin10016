@@ -35,16 +35,16 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab10/Inst
 3. What `undefined reference` means and why the provided `Makefile` hit it: Makefile only knows about main.c, and does not have access to the expected functions
 4. Command(s) to compile `main.c` and `todo.c` into object files: gcc -c main.c/todo.c
 5. Command(s) to link the object files into `todo_app`: gcc -o todo_app main.o todo.o
-6. Command(s) to run the program:
+6. Command(s) to run the program: ./todo_app
 
 ## Part 3 - Git Hygiene
 
 Remove this statement and the exclamation point from the line below so TAs can click to check for a working `.gitignore` file.  Test that the link works - if it doesn't, fix the pathing.
 
-![`.gitignore` file in root of repository](../.gitignore)
+[`.gitignore` file in root of repository](../.gitignore)
 
 ## Part 4 - Fix It
-
+i
 - Link to Pull Request:
 - Link to fix commit:
 
