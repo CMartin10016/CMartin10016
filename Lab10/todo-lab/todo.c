@@ -106,6 +106,9 @@ void remove_task(void) {
     for (int i = index; i < num_tasks - 1; i++) {
         tasks[i] = tasks[i + 1];
     }
+
+    num_tasks--;
+
     printf("Task removed from the to-do list.\n");
 }
 
