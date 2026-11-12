@@ -50,13 +50,23 @@ Remove this statement and the exclamation point from the line below so TAs can c
 
 ## Part 5 - `makey makey`
 
-Using `Makefile` to build executable:
+Using `Makefile` to build executable: 
+`$(TARGET): $(OBJS)
+        $(CC) $(CFLAGS) $(SRCS) -o $(TARGET)`
 
 Using `Makefile` to run program:
+`run: todo_app
+        ./todo_app`
 
 Using `Makefile` to remove compilation files:
+`clean:
+        rm main.o
+        rm todo.o
+        rm todo_app`
 
 After `touch todo.c`, why does `make build` only recompile `todo.c`, how does `make` know what to skip, and why is that useful?
+
+`make build` skips everything but todo.c because it knows that todo.c is the only thing that needs compiled based off of its prerequisites. This is useful because it means that only todo.c needs to be recompiled and less work is required.
 
 ## Part 6 - Libraries & Other OSes
 
