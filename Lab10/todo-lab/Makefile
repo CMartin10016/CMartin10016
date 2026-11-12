@@ -16,6 +16,7 @@ TARGET = todo_app
 
 # The source code files that make up the program
 SRCS = main.c todo.c
+OBJS = main.o todo.o
 
 # A rule tells make how to create something:
 #
@@ -32,8 +33,11 @@ SRCS = main.c todo.c
 build: $(TARGET)
 
 # Compiles everything listed in SRCS into the program
-$(TARGET): $(SRCS)
+$(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
+
+compile: $(SRCS) todo.h 
+	$(CC) $(CFLAGS) $(SRCS) -c
 
 # Normally make treats a target as the name of a file.  If that file exists
 # and is up to date, make skips the rule.
@@ -45,4 +49,4 @@ $(TARGET): $(SRCS)
 # Listing a target after .PHONY tells make that it's an action, so make always
 # runs it and never looks for a file with that name.  Any target that doesn't
 # create a file with its own name belongs on this line, separated by spaces.
-.PHONY: build
+.PHONY: buildi
