@@ -42,6 +42,11 @@ compile: $(SRCS) todo.h
 run: todo_app
 	./todo_app
 
+clean:
+	rm main.o
+	rm todo.o
+	rm todo_app
+
 # Normally make treats a target as the name of a file.  If that file exists
 # and is up to date, make skips the rule.
 #
