@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -g
 TARGET = todo_app
 
 # The source code files that make up the program
-SRCS = main.c
+SRCS = main.c todo.c
 
 # A rule tells make how to create something:
 #
