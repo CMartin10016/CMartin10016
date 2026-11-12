@@ -44,9 +44,9 @@ Remove this statement and the exclamation point from the line below so TAs can c
 [`.gitignore` file in root of repository](../.gitignore)
 
 ## Part 4 - Fix It
-i
-- Link to Pull Request:
-- Link to fix commit:
+
+- Link to Pull Request: https://github.com/CMartin10016/CMartin10016/pull/15
+- Link to fix commit: https://github.com/CMartin10016/CMartin10016/commit/7547ff13282c4a9e2050a081f950bad853a9b835
 
 ## Part 5 - `makey makey`
 
