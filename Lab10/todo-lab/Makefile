@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -g
 TARGET = todo_app
 
 # The source code files that make up the program
-SRCS = main.c todo.c
+SRCS = main.c todo.c display.c
 OBJS = main.o todo.o
 
 # A rule tells make how to create something:
@@ -34,9 +34,9 @@ build: $(TARGET)
 
 # Compiles everything listed in SRCS into the program
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) -lncurses
 
-compile: $(SRCS) todo.h 
+compile: $(SRCS) todo.h display.h
 	$(CC) $(CFLAGS) $(SRCS) -c
 
 run: todo_app

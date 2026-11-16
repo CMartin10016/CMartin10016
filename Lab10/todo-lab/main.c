@@ -8,6 +8,7 @@
 #include <stdio.h>    /* printf, fgets */
 #include <stdlib.h>   /* atoi */
 #include "todo.h"     /* add_task, complete_task, remove_task, view_tasks */
+#include "display.h"
 
 /* Prints the menu.  "static" means only this file can call it. */
 static void show_menu(void) {
@@ -45,7 +46,7 @@ int main(void) {
                 remove_task();
                 break;
             case 4:
-                view_tasks();
+                display_tasks();
                 break;
             case 5:
                 printf("Exiting program. Goodbye!\n");

@@ -74,13 +74,17 @@ After `touch todo.c`, why does `make build` only recompile `todo.c`, how does `m
 
 | Error | Stage (compiling or linking) | What you did to fix it |
 | ----- | ---------------------------- | ---------------------- |
-|       |                              |                        |
-|       |                              |                        |
+| Ncurses is not installed and can't be used in display.c      | Compiling                             | Download ncurses                       |
 
 **`ldd` output for `todo_app`**
 
 ```
-Paste output here
+ubuntu@ceg2350-sandbox:~/git/CMartin10016/Lab10/todo-lab$ ldd todo_app
+        linux-vdso.so.1 (0x0000729a6522f000)
+        libncurses.so.6 => /lib/x86_64-linux-gnu/libncurses.so.6 (0x0000729a651f0000)
+        libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x0000729a651bc000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000729a64e00000)
+        /lib64/ld-linux-x86-64.so.2 (0x0000729a65231000)
 ```
 
 Line(s) for ncurses:
@@ -90,11 +94,13 @@ Line(s) for ncurses:
 | Library (Ubuntu)    | Ubuntu package | Link flag | macOS equivalent & how to get it | Windows (MSYS2) equivalent & how to get it |
 | ------------------- | -------------- | --------- | -------------------------------- | ------------------------------------------ |
 | **math**            | `libc6-dev`    | `-lm`     | Built in to the system, nothing to install | Built in to the C runtime, nothing to install |
-| **ncurses**         |                |           |                                  |                                            |
-| **pthreads**        |                |           |                                  |                                            |
-| **readline**        |                |           |                                  |                                            |
+| **ncurses**         | `libncurses-dev`               | `-lncurses`          | Install MacPorts, then run `sudo port install ncurses` in the command line                                 | MSYS2 already has it                                           |
+| **pthreads**        | `libpthread-stubs0-dev`               | `-lpthread`          | Built in                                 | Install gcc, which comes with pthreads                                           |
+| **readline**        | `libreadline6 libreadline6-dev`               | `-lreadline`          | Install MacPorts, then run `sudo port install readline`                                 | Run `pacman -S mingw-w64-x86_64-readline`                                           |
 
 What in your `Makefile` would need to change to build this program on your computer's OS?
+
+MSYS2 already has ncurses, so assuming everything else works properly, the Makefile should build correctly as is.
 
 ## Part 7 - Citations & Resources
 
