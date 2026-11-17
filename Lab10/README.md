@@ -104,14 +104,17 @@ MSYS2 already has ncurses, so assuming everything else works properly, the Makef
 
 ## Part 7 - Citations & Resources
 
-To add citations, provide the site and a summary of what it assisted you with.  If generative AI was used, include which generative AI system was used and what prompt(s) you fed it.
+git branching: https://git-scm.com/book/ms/v2/Appendix-C:-Git-Commands-Branching-and-Merging
+        Explained what commands to use to move & manage branches
 
-## Extra Credit - Cross-Platform `Makefile`
+.gitignore: https://www.w3schools.com/git/git_ignore.asp
+        Explained the purpose of .gitignore.
 
-OS(es) tested in addition to Ubuntu:
+Compiling: https://www.geeksforgeeks.org/linux-unix/cc-command-in-linux-with-examples/
+        Explained how to format gcc commands for compiling purposes.
 
-Differences your `Makefile` handles for each OS:
+Makefile: https://makefiletutorial.com/
+        Explained how to format Makefile rules.
 
-Screenshot proof of it in action!
-
-![Insert screenshot here](path/to/screenshot)
+Libraries on other systems: https://packages.msys2.org/packages/mingw-w64-x86_64-ncurses
+        Explained how ncurses works on MSYS2
