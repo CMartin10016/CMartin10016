@@ -1,7 +1,7 @@
 ## Lab 11
 
-- Name:
-- Email:
+- Name: Connor Martin
+- Email: martin.782@wright.edu
 
 Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Instructions.html
 
@@ -11,16 +11,16 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 
 | `tar` Option | Description |
 |--------|------------------------|
-| `-c`   |                        |
-| `-v`   |                        |
-| `-f`   |                        |
-| `-z`   |                        |
-| `-x`   |                        |
-| `-t`   |                        |
+| `-c`   | Create archive                       |
+| `-v`   | Verbose descriptions                       |
+| `-f`   | Takes argument of archive                       |
+| `-z`   | Filter through gzip                       |
+| `-x`   | Extract archive                       |
+| `-t`   | List contents of archive                       |
 
-2. Command(s) to create and compress your archive:
+2. Command(s) to create and compress your archive: tar -cvf myarchive.tar.gz ~/
 
-3. Method(s) used to prove your archive is compressed: 
+3. Method(s) used to prove your archive is compressed: "tar -tf myarchive.tar.gz" correctly lists all files within the archive, which it would not do if it was a directory.
 
 ## Part 2 Answers:
 
