@@ -28,19 +28,19 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 
 | `sftp` Command | Description |
 |---------|------------------------|
-| `ls`    |                        |
-| `lls`   |                        |
-| `cd`    |                        |
-| `lcd`   |                        |
-| `pwd`   |                        |
-| `lpwd`  |                        |
-| `put`   |                        |
-| `get`   |                        |
-| `exit` / `bye` |                 |
+| `ls`    | Lists files in current remote directory                       |
+| `lls`   | Lists files in current local directory                       |
+| `cd`    | Moves directory within remote server                       |
+| `lcd`   | Moves directory for local host                       |
+| `pwd`   | Print current remote directory                       |
+| `lpwd`  | Print current local directory                       |
+| `put`   | Upload a local file to remote server                       |
+| `get`   | Download a remote file to local machine                       |
+| `exit` / `bye` | Close connection                |
 
-2. Command to connect with `sftp`:
-3. Command(s) to use `sftp` to download your `.tar.gz` file to your system:
-4. Command(s) to decompress & extract your `.tar.gz` file to your system:
+2. Command to connect with `sftp`: `sftp -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112`
+3. Command(s) to use `sftp` to download your `.tar.gz` file to your system: `cd git/CMartin10016/Lab11` to move to correct directory, then `get myarchive.tar.gz`
+4. Command(s) to decompress & extract your `.tar.gz` file to your system: tar -xvf "myarchive.tar.gz"
 
 ## Part 3 Answers:
 
