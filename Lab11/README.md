@@ -44,11 +44,11 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 
 ## Part 3 Answers:
 
-1. Command to install `apache2` or `nginx`:
-2. Command to confirm that web serving service is running:
-3. Command to download `simple-site.tar.gz` to your AWS instance:
-4. Command(s) to change permissions: 
-5. Command to extract the compressed archive to `/var/www/html`:
+1. Command to install `apache2` or `nginx`: sudo apt instal "apache2"
+2. Command to confirm that web serving service is running: systemctl
+3. Command to download `simple-site.tar.gz` to your AWS instance: wget "https://github.com/pattonsgirl/CEG2350/raw/refs/heads/main/Labs/Lab11/simple-site.tar.gz"
+4. Command(s) to change permissions: "sudo chmod 775 /var/www/html", "sudo chown ubuntu:squad index.html"
+5. Command to extract the compressed archive to `/var/www/html`: "sudo tar -xvf 'simple-site.tar.gz'"
 6. Required changes to `index.html` will be awarded credit based on screenshot.
 7. [Insert screenshot of your website (with the URL bar included)]()
 
