@@ -50,7 +50,7 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 4. Command(s) to change permissions: "sudo chmod 775 /var/www/html", "sudo chown ubuntu:squad index.html"
 5. Command to extract the compressed archive to `/var/www/html`: "sudo tar -xvf 'simple-site.tar.gz'"
 6. Required changes to `index.html` will be awarded credit based on screenshot.
-7. [Insert screenshot of your website (with the URL bar included)]()
+7. [Link to website screenshot](https://github.com/CMartin10016/CMartin10016/blob/20-lab-11---part-3/Lab11/Screenshot%202026-11-19%20144507.png)
 
 ## Part 4 Answers:
 
