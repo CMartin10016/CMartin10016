@@ -58,13 +58,13 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 
 | `ssh` File Path / Name          | Purpose            |
 |---------------------------------|--------------------|
-| `~/.ssh/config`                 |                    |
-| `~/.ssh/id_rsa`                 |                    |
-| `~/.ssh/id_rsa.pub`             |                    |
-| `~/.ssh/id_ed25519`             |                    |
-| `~/.ssh/id_ed25519.pub`         |                    |
-| `~/.ssh/authorized_keys`        |                    |
-| `~/.ssh/known_hosts`            |                    |
+| `~/.ssh/config`                 | Set up ssh connections to login using a host designated name                   |
+| `~/.ssh/id_rsa`                 | RSA private key                   |
+| `~/.ssh/id_rsa.pub`             | RSA public key                   |
+| `~/.ssh/id_ed25519`             | Ed25519 private key                   |
+| `~/.ssh/id_ed25519.pub`         | Ed25519 public key                   |
+| `~/.ssh/authorized_keys`        | Authorizes public keys that are allowed to login                   |
+| `~/.ssh/known_hosts`            | Stores hosts that this machine has logged in to                   |
 
 2. Command to generate a new key, with options entered into the fields 
 ```
