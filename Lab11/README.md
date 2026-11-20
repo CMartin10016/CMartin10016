@@ -68,27 +68,55 @@ Instructions for this lab: https://pattonsgirl.github.io/CEG2350/Labs/Lab11/Inst
 
 2. Command to generate a new key, with options entered into the fields 
 ```
-Enter command & options entered while running here
+PS C:\Users\1n21g> ssh-keygen -t rsa -C "martin782@wright.edu"
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\1n21g/.ssh/id_rsa): id_rsa_lab11
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in id_rsa_lab11
+Your public key has been saved in id_rsa_lab11.pub
 ```
 
 3. Create the user and / or prove the user exists
 ```
-Enter command & output for creating user and / or proving user exists.
+ubuntu@ceg2350-sandbox:~$ su cmartin
+Password:
+cmartin@ceg2350-sandbox:/home/ubuntu$ whoami
+cmartin
 ```
 
 4. Contents of `~/.ssh/authorized_keys` in remote user account:
 ```
-Enter contents here
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9XrSnYIt/0QT2LRm/lu2dyP8aO6o6a1p7IfFDs1kMMtnMnyBORHuuieJmo/aYjWmJHa0xRgzKmA8mqyAi97ktkxRa3tTiOQOZ70dYzrFv61G4UwNXaFFfE3HLQpcp+ZDkcurrNBCkybKTe0eD5adyt2tF2VUKEOjrfYsKnVW4A2MPO9NfM3JtCSkkEb8c02TvaKXRTQHC8Ne8iDK3Ry7UJz79OXAc9jzUUrlc+8iiC615Li1iPRekvIRu42IFvpc3mzWkry1nTx5dHTWXTIuPs29LExBpIwcELBKBtF/7OsinnPJM+rXw314CpLla+SlupJzZ7fAg5ev8OLzW+0fYxCcTFXNv91q1pexrx/P7PtZicB9m7YXgmX/QKnFctQmbEEUHHDUQ5kXUDj8o/3a0gLEgoYzDcZbGwIC3kH0qyYztSsyBTW6rJOR9GoyshVYKbl2iNBaPOQnI1kyw/q9xmJgWH/MxWQE/0idWyAAxv38dWBmv82TLD7mR803qcBU= martin782@wright.edu
 ```
 
-5. `ssh` command:
+5. `ssh` command: ssh -i C:\Users\1n21g\.ssh\id_rsa_lab11 cmartin@35.172.45.112
 
 6. Updated `config` file contents:
 ```
-Enter block with connection information in config file here
+# ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@35.172.45.112
+Host mainaws
+        HostName 35.172.45.112
+        User ubuntu
+        Port 22
+        IdentityFile C:\Users\1n21g\Downloads\labsuser.pem
+
+#  ssh -i C:\Users\1n21g\.ssh\id_rsa_lab11 cmartin@35.172.45.112
+Host cmartinaws
+        HostName 35.172.45.112
+        User cmartin
+        Port 22
+        IdentityFile C:\Users\1n21g\.ssh\id_rsa_lab11
+
+# ssh -i 'C:\Users\1n21g\Downloads\labsuser.pem' ubuntu@184.197.46.249
+Host secondaws
+        HostName 184.197.46.249
+        User ubuntu
+        Port 22
+        IdentityFile C:\Users\1n21g\Downloads\labsuser.pem
 ```
 
-7. `ssh` command post `config` file entry:
+7. `ssh` command post `config` file entry: ssh cmartinaws
 
 ## Part 5 - Citations / Resources
 
